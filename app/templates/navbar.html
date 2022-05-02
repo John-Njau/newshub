@@ -1,0 +1,33 @@
+<nav
+  class="navbar navbar-expand navbar-dark bg-primary"
+  aria-label="Second navbar example"
+>
+  <div class="container-fluid ">
+    <img
+      src="{{url_for('static',filename='Assets/favicon.ico')}}"
+      class="me-2 img-fluid"
+      alt=""
+    />
+    <a class="navbar-brand" href="/">The NEWS Hub</a>
+    <div class="collapse navbar-collapse d-flex flex-wrap" id="navbarsExample02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/news">News</a>
+        </li>
+      </ul>
+      <form>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Search..."
+          name = 'news_query'
+          aria-label="Search"
+        />
+        <input type="submit" value="Submit" class="btn btn-secondary" />
+      </form>
+    </div>
+  </div>
+</nav>

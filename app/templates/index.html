@@ -1,0 +1,34 @@
+{% extends "base.html"%} {% block content %} {% block styles %} {{super ()}}
+<link href="{{url_for('static',filename='css/index.css')}}" rel="stylesheet" />
+{% endblock %}
+<h3 class="text-dark mt-5">Get the latest news from ...</h3>
+<div class="card-box">
+  {% for source in sources %}
+  <div class="card sources">
+    <div class="card-body items">
+      <h5 class="card-title text">
+        <a class="card-title" href="{{source.url}}">{{source.name}}</a>
+        <hr>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{source.author}}</h6>
+      <p class="card-text">{{source.description}}</p>
+      <div>
+        <p>
+          language: {{source.language}}
+          <span class="category ms-5">category: {{source.category}}</span>
+        </p>
+      </div>
+
+      <div class="links">
+        <a href="{{source.url}}" role="button" class="card-link"
+          >{{source.name}}
+        </a>
+            |
+        <a href="/news/{{source.id}}" class="card-link">News</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

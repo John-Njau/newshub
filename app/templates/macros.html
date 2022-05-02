@@ -1,0 +1,12 @@
+
+{% macro displaySearchList(data) %} {% for news in data %}
+<div>
+  <h1>{{news.title}}</h1>
+  <p>{{news.description}}</p>
+  <img src="{{news.image}}" alt="" width="300" />
+  <p>
+    {{news.time | truncate(15)}}
+    <a href="{{news.url}}"> Read article</a>
+  </p>
+</div>
+{% endfor %} {% endmacro %}
